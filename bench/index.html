@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desk Sonar · 한쪽 발 실험</title>
+<style>
+body{max-width:42rem;margin:2rem auto;padding:0 1rem;background:#f6f8fa;color:#17212a;font:1rem/1.55 system-ui,sans-serif}
+fieldset{border:1px solid #b3bdc8;padding:1rem;margin:1rem 0}button,select,input{font:inherit}
+label{display:block;margin:.55rem 0}button{padding:.45rem .85rem;margin-right:.4rem}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;padding:.8rem}a{color:#005ea2}
+</style>
+<h1>Desk Sonar 실험 기록기</h1>
+<p>책상 밑 폰에서 한쪽 발의 자세를 고정하고 6초간 녹음합니다. 소리 안 내는 대조 실험부터 시작하세요. 시험음은 들릴 수 있습니다. 기기 볼륨을 낮추고 불편하면 즉시 중지하세요.</p>
+<fieldset>
+<legend>새 측정</legend>
+<label>세션 ID <input id="session" value="day1" maxlength="40" pattern="[A-Za-z0-9_-]+"></label>
+<label>정답 <select id="label"><option value="down">발 내림</option><option value="up">발 들고 유지</option><option value="negative">빈 공간/의자/기타</option></select></label>
+<label>시험음 <select id="mode"><option value="silent">끄기 (대조)</option><option value="active">켜기 (14–18 kHz)</option></select></label>
+<button id="start" type="button">마이크 허용 및 시작</button><button id="stop" type="button" disabled>중지 및 폐기</button>
+</fieldset>
+<p id="status" role="status">대기 중. 마이크는 시작을 누르기 전에는 켜지지 않습니다.</p>
+<p id="downloads"></p>
+<pre id="result" hidden></pre>
+<p>음성과 분석은 이 기기에서만 처리합니다. 다운로드한 WAV는 대화 등 주변 소리도 담을 수 있으므로 공유하지 마세요.</p>
+<script type="module" src="./capture.mjs"></script>
+</html>
