@@ -1,0 +1,19 @@
+# Local captures and results
+/data/
+/recordings/
+/captures/
+/results/
+*.wav
+*.pcm
+*.mp4
+*.mov
+
+# Local settings and build outputs
+.env
+.env.*
+local.properties
+.gradle/
+build/
+.idea/
+.DS_Store
+Thumbs.db
